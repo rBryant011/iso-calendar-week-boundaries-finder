@@ -21,3 +21,10 @@ Converting an ISO week number back to calendar dates is not a one-liner because 
 ## Awkward edge
 
 Week 53 exists only in some years. Calling `isoWeekBoundaries(2021, 53)` throws a `RangeError` because 2021 has only 52 ISO weeks. Use `isValidIsoWeek` to check before calling if you prefer to avoid exceptions.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
