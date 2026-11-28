@@ -1,6 +1,6 @@
 {
   "name": "iso-calendar-week-boundaries-finder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Gets the start and end dates of an ISO week from its year and week number.",
   "type": "module",
   "main": "src/index.js",
